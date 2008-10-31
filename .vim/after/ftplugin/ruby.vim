@@ -7,3 +7,5 @@ if (matchend(bufname("%"),"test.rb") >-1) || (matchend(bufname("%"), "tests.rb")
 else
 	comp ruby
 end
+
+let &l:path = ".," . $PWD . "/**,". &l:path
