@@ -2,7 +2,7 @@ filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
 
 "turn off sound
-"set vb
+set vb t_vb=
 
 map <F2> :wall \|!ctags -R<CR>
 map! <F2> <ESC><F2>
