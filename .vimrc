@@ -1,6 +1,9 @@
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
 
+"turn off sound
+"set vb
+
 map <F2> :wall \|!ctags -R<CR>
 map! <F2> <ESC><F2>
 
@@ -53,7 +56,7 @@ set mat=5  " Bracket blinking.
 " Show $ at end of line and trailing space as ~
 "set list
 "set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
-set novisualbell  " No blinking .
+"set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
  
