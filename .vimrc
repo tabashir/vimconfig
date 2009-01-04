@@ -1,15 +1,16 @@
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
 
-"turn off sound
-set vb t_vb=
-
 map <F2> :wall \|!ctags -R<CR>
 map! <F2> <ESC><F2>
 
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
- 
+
+"Visual Bell no Sound
+set noerrorbells  " No noise.
+set visualbell
+
 " Minibuffer Explorer Settings
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
@@ -57,7 +58,6 @@ set mat=5  " Bracket blinking.
 "set list
 "set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
 "set novisualbell  " No blinking .
-set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
  
 " gvim specific
