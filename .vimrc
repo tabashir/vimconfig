@@ -11,6 +11,9 @@ set viminfo^=!
 set noerrorbells  " No noise.
 set visualbell
 
+" Mouse selection except in command mode
+set mouse=ivn  " Mouse in all modes
+
 " Minibuffer Explorer Settings
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
@@ -42,7 +45,7 @@ set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
 set shiftwidth=2  " Tabs under smart indent
-set nocp incsearch
+set incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
@@ -50,6 +53,7 @@ set cindent
 set autoindent
 set smarttab
 set expandtab
+set ignorecase smartcase
  
 " Visual
 set showmatch  " Show matching brackets.
@@ -62,4 +66,3 @@ set laststatus=2  " Always show status line.
  
 " gvim specific
 set mousehide  " Hide mouse after chars typed
-set mouse=a  " Mouse in all modes
