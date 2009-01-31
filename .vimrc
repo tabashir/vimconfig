@@ -4,6 +4,9 @@ set nocompatible  " We don't want vi compatibility.
 map <F2> :wall \|!ctags -R<CR>
 map! <F2> <ESC><F2>
 
+map <F5> :wall \|:Rake<CR>
+map! <F5> <ESC><F5>
+
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
 
