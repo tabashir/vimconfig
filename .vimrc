@@ -7,6 +7,9 @@ map! <F2> <ESC><F2>
 map <F5> :wall \|:Rake<CR>
 map! <F5> <ESC><F5>
 
+map <F6> :wall \|:!ruby %<CR>
+map! <F6> <ESC><F6>
+
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
 
