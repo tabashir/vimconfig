@@ -13,6 +13,9 @@ map! <F5> <ESC><F5>
 map <F6> :wall \|:!ruby %<CR>
 map! <F6> <ESC><F6>
 
+map <F11> :TlistToggle<CR>
+map! <F11> <ESC><F11>
+
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
 
