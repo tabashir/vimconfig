@@ -16,6 +16,10 @@ map! <F6> <ESC><F6>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
+runtime xmlpretty.vim
+command! -range=% Xmlpretty :call XmlPretty(<line1>, <line2>)
+map <C-K><C-F> :Xmlpretty<CR>
+
 " Add recently accessed projects menu (project plugin)
 set viminfo^=!
 
