@@ -1,13 +1,13 @@
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
 
-map <F2> :wall \|!ctags -R<CR>
+map <F2> :wall \|!ctags -R --extra=+f<CR>
 map! <F2> <ESC><F2>
 
 map <F4> :BD <CR>
 map! <F4> <ESC><F4>
 
-map <F5> :wall \|:Rake<CR>
+map <F5> :wall \|:mak<CR>
 map! <F5> <ESC><F5>
 
 map <F6> :wall \|:!ruby %<CR>
@@ -44,6 +44,8 @@ map <silent> <m-n> :cn <cr>
 let g:rails_default_file='config/database.yml'
  
 syntax enable
+
+au VimLeavePre * mksession! project.session
 
 " ADDITIONAL CONFIGS
 
