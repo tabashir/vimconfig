@@ -13,6 +13,12 @@ map! <F5> <ESC><F5>
 map <F6> :wall \|:!ruby %<CR>
 map! <F6> <ESC><F6>
 
+map <F9> :'a,. s/^/#/<CR> 
+map! <F9> <ESC><F9>
+
+map <C-F9> :'a,. s/^#//<CR> 
+map! <C-F9> <ESC><C-F9>
+
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
@@ -45,7 +51,8 @@ let g:rails_default_file='config/database.yml'
  
 syntax enable
 
-au VimLeavePre * mksession! project.session
+"au VimLeavePre * mksession! project.session
+command! WQ :mksession! project.session | qall!
 
 " ADDITIONAL CONFIGS
 
