@@ -7,16 +7,18 @@ map! <F2> <ESC><F2>
 map <F4> :BD <CR>
 map! <F4> <ESC><F4>
 
-map <F5> :wall \|:mak<CR>
+map <F5> :wall<CR>:Rake<CR>
 map! <F5> <ESC><F5>
 
-map <F6> :wall \|:!ruby %<CR>
-map! <F6> <ESC><F6>
+map <S-F5> :wall \|:!ruby %<CR>
+map! <S-F5> <ESC><S-F5>
 
-map <F9> :'a,. s/^/#/<CR> 
+map <F9> :s/^/#/<CR>
+"map <F9> :'a,. s/^/#/<CR> 
 map! <F9> <ESC><F9>
 
-map <C-F9> :'a,. s/^#//<CR> 
+map <C-F9> :s/^#//<CR>
+"map <C-F9> :'a,. s/^#//<CR> 
 map! <C-F9> <ESC><C-F9>
 
 map <F11> :TlistToggle<CR>
