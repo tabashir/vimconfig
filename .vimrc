@@ -36,7 +36,7 @@ set noerrorbells  " No noise.
 set visualbell
 
 " Mouse selection except in command mode
-set mouse=ivn  " Mouse in all modes
+set mouse=in  " Mouse in all modes
 
 " Minibuffer Explorer Settings
 "let g:miniBufExplMapWindowNavVim = 1
