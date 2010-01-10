@@ -24,12 +24,20 @@ map! <C-F9> <ESC><C-F9>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
+" Centre screen on current line stuff
+map <space> zz
+map n nzz
+map N Nzz
+
 runtime xmlpretty.vim
 command! -range=% Xmlpretty :call XmlPretty(<line1>, <line2>)
 map <C-K><C-F> :Xmlpretty<CR>
 
 " Add recently accessed projects menu (project plugin)
-set viminfo^=!
+"set viminfo^=!
+
+" set viminfo file to remember just current folder info
+" set viminfo='10,\"5,n.viminfo
 
 "Visual Bell no Sound
 set noerrorbells  " No noise.
@@ -66,7 +74,10 @@ set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+
+"Colours
 " colorscheme vividchalk  " Uncomment this to set a default theme
+hi CurrentLine term=bold cterm=bold gui=bold ctermbg=none guibg=none
  
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
