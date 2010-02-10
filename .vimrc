@@ -4,6 +4,9 @@ set nocompatible  " We don't want vi compatibility.
 map <F2> :wall \|!ctags -R --extra=+f<CR>
 map! <F2> <ESC><F2>
 
+map <F3> :NERDTreeToggle<CR>
+map! <F3> <ESC><F3>
+
 map <F4> :BD <CR>
 map! <F4> <ESC><F4>
 
@@ -74,6 +77,8 @@ set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+set tabstop=2 expandtab shiftwidth=2 softtabstop=2
+
 
 "Colours
 " colorscheme vividchalk  " Uncomment this to set a default theme
@@ -92,7 +97,12 @@ set autoindent
 set smarttab
 set expandtab
 set ignorecase smartcase
- 
+
+" Python Setup
+autocmd BufRead,BufNewFile *.py syntax on
+autocmd BufRead,BufNewFile *.py set ai
+autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
+
 " Visual
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
