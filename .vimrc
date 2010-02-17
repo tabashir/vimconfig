@@ -82,7 +82,7 @@ set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 "Colours
 " colorscheme vividchalk  " Uncomment this to set a default theme
-hi CurrentLine term=bold cterm=bold gui=bold ctermbg=none guibg=none
+hi CurrentLine term=bold cterm=bold gui=bold
  
 " Formatting (some of these are for coding in C and C++)
 set ts=2  " Tabs are 2 spaces
