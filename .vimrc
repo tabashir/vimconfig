@@ -16,12 +16,12 @@ map! <F5> <ESC><F5>
 map <S-F5> :wall \|:!ruby %<CR>
 map! <S-F5> <ESC><S-F5>
 
-map <F9> :s/^/#/<CR>
-"map <F9> :'a,. s/^/#/<CR> 
+"map <F9> :s/^/#/<CR>
+map <F9> :TComment<CR> 
 map! <F9> <ESC><F9>
 
-map <C-F9> :s/^#//<CR>
-"map <C-F9> :'a,. s/^#//<CR> 
+"map <C-F9> :s/^#//<CR>
+map <C-F9> :TCommentBlock<CR> 
 map! <C-F9> <ESC><C-F9>
 
 map <F11> :TlistToggle<CR>
@@ -40,7 +40,11 @@ map <C-K><C-F> :Xmlpretty<CR>
 "set viminfo^=!
 
 " set viminfo file to remember just current folder info
-" set viminfo='10,\"5,n.viminfo
+command! GlobalInfo :set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
+command! LocalInfo :set viminfo=%100,'100,/100,h,\"500,:100,n.viminfo
+
+"Tcomment no extra indents
+command! SetRubyComment :call TCommentDefineType("ruby", "#%s")
 
 "Visual Bell no Sound
 set noerrorbells  " No noise.
@@ -97,6 +101,8 @@ set autoindent
 set smarttab
 set expandtab
 set ignorecase smartcase
+set scrolloff=5
+set autoread
 
 " Python Setup
 autocmd BufRead,BufNewFile *.py syntax on

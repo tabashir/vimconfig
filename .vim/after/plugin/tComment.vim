@@ -1,0 +1,1 @@
+call TCommentDefineType("ruby", "#%s")
