@@ -27,6 +27,10 @@ map! <C-F9> <ESC><C-F9>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
+let g:SuperTabMappingForward = '<nul>'
+let g:SuperTabMappingBackward = '<s-nul>'
+
+
 " Centre screen on current line stuff
 map <space> zz
 map n nzz
@@ -40,8 +44,8 @@ map <C-K><C-F> :Xmlpretty<CR>
 "set viminfo^=!
 
 " set viminfo file to remember just current folder info
-command! GlobalInfo :set viminfo=%100,'100,/100,h,\"500,:100,n~/.viminfo
-command! LocalInfo :set viminfo=%100,'100,/100,h,\"500,:100,n.viminfo
+command! GlobalInfo :set viminfo=%100,'100,/100,h,@500,:100,n~/.viminfo
+command! LocalInfo :set viminfo=%100,'100,/100,h,@500,:100,n.viminfo
 
 "Tcomment no extra indents
 command! SetRubyComment :call TCommentDefineType("ruby", "#%s")
@@ -103,6 +107,12 @@ set expandtab
 set ignorecase smartcase
 set scrolloff=5
 set autoread
+
+:command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+:command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
+:command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
+
+
 
 " Python Setup
 autocmd BufRead,BufNewFile *.py syntax on
