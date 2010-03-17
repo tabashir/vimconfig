@@ -44,8 +44,11 @@ map <C-K><C-F> :Xmlpretty<CR>
 "set viminfo^=!
 
 " set viminfo file to remember just current folder info
-command! GlobalInfo :set viminfo=%100,'100,/100,h,@500,:100,n~/.viminfo
-command! LocalInfo :set viminfo=%100,'100,/100,h,@500,:100,n.viminfo
+command! GlobalInfo :set viminfo='1000,f1,<500,n~/.viminfo
+command! LocalInfo :set  viminfo='1000,f1,<500,n.viminfo
+
+"set viminfo=%100,'100,/100,h,@500,:100
+set viminfo='1000,f1,<500
 
 "Tcomment no extra indents
 command! SetRubyComment :call TCommentDefineType("ruby", "#%s")
