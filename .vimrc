@@ -27,6 +27,9 @@ map! <C-F9> <ESC><C-F9>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
+map <Leader>T :Rake!<CR>
+map <Leader>t :.Rake!<CR>
+
 let g:SuperTabMappingForward = '<nul>'
 let g:SuperTabMappingBackward = '<s-nul>'
 
