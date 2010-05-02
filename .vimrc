@@ -87,6 +87,8 @@ syntax enable
 
 "au VimLeavePre * mksession! project.session
 command! WQ :mksession! project.session | qall!
+map ZQ WQ
+
 
 " ADDITIONAL CONFIGS
 
