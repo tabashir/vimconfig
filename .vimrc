@@ -30,6 +30,8 @@ map! <F11> <ESC><F11>
 map <Leader>t :.Rake!<CR>
 map <Leader>tt :Rake!<CR>
 
+map gt :tag <C-R><C-W><CR>
+
 "let g:SuperTabMappingForward = '<nul>'
 "let g:SuperTabMappingBackward = '<s-nul>'
 "let g:SuperTabMappingForward = '<c-space>'
@@ -111,19 +113,30 @@ set incsearch
 set cinoptions=:0,p0,t0
 set cinwords=if,else,while,do,for,switch,case
 set formatoptions=tcqr
-set cindent
-set autoindent
-set smarttab
-set expandtab
+"set cindent
+"set smarttab
 set ignorecase smartcase
 set scrolloff=5
 set autoread
+
+set autoindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set textwidth=0
+
 
 :command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 :command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
 :command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
 
+"let mapleader=","
+map <leader>spe :set syntax=perl   ai et ts=4 sw=4 tw=0<CR>
+map <leader>spy :set syntax=python ai et ts=4 sw=4 tw=0<CR>
+map <leader>sr  :set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
 
+" Ruby Setup
+au BufEnter *.rb set syntax=ruby ai et ts=2 sw=2 tw=0
 
 " Python Setup
 autocmd BufRead,BufNewFile *.py syntax on
