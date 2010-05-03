@@ -127,6 +127,13 @@ set tabstop=2
 set shiftwidth=2
 set textwidth=0
 
+syntax on
+ 
+if has("autocmd")
+  filetype indent on
+endif
+
+
 
 :command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 :command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
