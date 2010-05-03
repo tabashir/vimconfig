@@ -32,6 +32,8 @@ map <Leader>tt :Rake!<CR>
 
 map gt :tag <C-R><C-W><CR>
 
+map ger :cope <CR> <CR> :ccl <CR>
+
 "let g:SuperTabMappingForward = '<nul>'
 "let g:SuperTabMappingBackward = '<s-nul>'
 "let g:SuperTabMappingForward = '<c-space>'
