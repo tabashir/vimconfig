@@ -30,8 +30,11 @@ map! <C-F9> <ESC><C-F9>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
-map <Leader>t :.Rake!<CR>
-map <Leader>tt :Rake!<CR>
+"map <Leader>t :.Rake!<CR>
+"map <Leader>tt :Rake!<CR>
+
+map <Leader>t <Plug>RubyTestRun
+map <Leader>tt <Plug>RubyFileRun
 
 map gt :tag <C-R><C-W><CR>
 
