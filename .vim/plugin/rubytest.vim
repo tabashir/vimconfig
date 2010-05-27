@@ -184,10 +184,10 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 if !hasmapto('<Plug>RubyTestRun')
-  map <unique> <Leader>rt <Plug>RubyTestRun
+  map <unique> <Leader>st <Plug>RubyTestRun
 endif
 if !hasmapto('<Plug>RubyFileRun')
-  map <unique> <Leader>rtt <Plug>RubyFileRun
+  map <unique> <Leader>stt <Plug>RubyFileRun
 endif
 
 function s:IsRubyTest()
