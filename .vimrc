@@ -30,11 +30,11 @@ map! <C-F9> <ESC><C-F9>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
-"map <Leader>t :.Rake!<CR>
-"map <Leader>tt :Rake!<CR>
+map <Leader>t :.Rake!<CR>
+map <Leader>tt :Rake!<CR>
 
-map <Leader>t <Plug>RubyTestRun
-map <Leader>tt <Plug>RubyFileRun
+"map <Leader>t <Plug>RubyTestRun
+"map <Leader>tt <Plug>RubyFileRun
 
 map gt :tag <C-R><C-W><CR>
 
@@ -48,6 +48,7 @@ map err :cope <CR> <CR> :ccl <CR>
 let g:tcommentMapLeader1=''
 let g:tcommentMapLeader2=''
 
+"let g:rubytest_in_quickfix = 1 
 
 " Centre screen on current line stuff
 map <space> zz
