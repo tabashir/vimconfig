@@ -19,6 +19,9 @@ map! <F5> <ESC><F5>
 map <S-F5> :wall \|:!ruby %<CR>
 map! <S-F5> <ESC><S-F5>
 
+map <C-F5> :wall \|:Rake!<CR>
+map! <C-F5> <ESC><C-F5>
+
 "map <F9> :s/^/#/<CR>
 map <F9> :TComment<CR> 
 map! <F9> <ESC><F9>
@@ -30,8 +33,7 @@ map! <C-F9> <ESC><C-F9>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
-map <Leader>t :.Rake!<CR>
-map <Leader>tt :Rake!<CR>
+map <Leader>tt :.Rake!<CR>
 
 "map <Leader>t <Plug>RubyTestRun
 "map <Leader>tt <Plug>RubyFileRun
