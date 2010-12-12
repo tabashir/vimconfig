@@ -33,9 +33,8 @@ map! <C-F9> <ESC><C-F9>
 map <F11> :TlistToggle<CR>
 map! <F11> <ESC><F11>
 
-map <Leader>tt :.Rake!<CR>
-
-"map <Leader>t <Plug>RubyTestRun
+map <Leader>kk :.Rake!<CR>
+map <Leader>k <Plug>RubyTestRun
 "map <Leader>tt <Plug>RubyFileRun
 
 map gt :tag <C-R><C-W><CR>
@@ -44,11 +43,17 @@ map err :cope <CR> <CR> :ccl <CR>
 
 "let g:SuperTabMappingForward = '<nul>'
 "let g:SuperTabMappingBackward = '<s-nul>'
-"let g:SuperTabMappingForward = '<c-space>'
+let g:SuperTabMappingForward = '<c-space>'
 "let g:SuperTabMappingBackward = '<s-c-space>'
 
 let g:tcommentMapLeader1=''
 let g:tcommentMapLeader2=''
+
+map \\f :Rfunctionaltest 
+map \\u :Runittest 
+map \\m :Rmodel 
+map \\c :Rcontroller 
+map \\v :Rview 
 
 "let g:rubytest_in_quickfix = 1 
 
@@ -174,3 +179,5 @@ set laststatus=2  " Always show status line.
  
 " gvim specific
 set mousehide  " Hide mouse after chars typed
+
+inoremap <Nul> <C-n>
