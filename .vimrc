@@ -39,6 +39,8 @@ map <Leader>k <Plug>RubyTestRun
 
 map gt :tag <C-R><C-W><CR>
 
+inoremap <Nul> <C-n>
+
 map err :cope <CR> <CR> :ccl <CR>
 
 "let g:SuperTabMappingForward = '<nul>'
