@@ -13,14 +13,14 @@ map! <silent> <F4> <ESC><F4>
 map <S-Tab> <C-W><C-W>
 map! <S-Tab> <C-W><C-W>
 
-map <F5> :wall<CR>:!rake<CR>
+map <C-F5> :wall<CR>:!rake<CR>
+map! <C-F5> <ESC><C-F5>
+
+map <F5> :wall \|:!ruby %<CR>
 map! <F5> <ESC><F5>
 
-map <S-F5> :wall \|:!ruby %<CR>
+map <S-F5> :wall \|:.Rake!<CR>
 map! <S-F5> <ESC><S-F5>
-
-map <C-F5> :wall \|:Rake!<CR>
-map! <C-F5> <ESC><C-F5>
 
 "map <F9> :s/^/#/<CR>
 map <F9> :TComment<CR> 
@@ -46,7 +46,9 @@ map err :cope <CR> <CR> :ccl <CR>
 "let g:SuperTabMappingForward = '<nul>'
 "let g:SuperTabMappingBackward = '<s-nul>'
 let g:SuperTabMappingForward = '<c-space>'
-"let g:SuperTabMappingBackward = '<s-c-space>'
+let g:SuperTabMappingBackward = '<s-c-space>'
+let g:SuperTabMappingTabLiteral = '<tab>'
+
 
 let g:tcommentMapLeader1=''
 let g:tcommentMapLeader2=''
@@ -183,3 +185,9 @@ set laststatus=2  " Always show status line.
 set mousehide  " Hide mouse after chars typed
 
 inoremap <Nul> <C-n>
+
+" Remove menu bar
+"set guioptions-=m
+
+" Remove toolbar
+set guioptions-=T
