@@ -1,1 +1,2 @@
 tComment.vba: call delete('/home/jezm/.vim/doc/tComment.txt')|call delete('/home/jezm/.vim/plugin/tComment.vim')|call delete('/home/jezm/.vim/autoload/tcomment.vim')
+supertab.vba: call delete('/home/jezm/.vim/doc/supertab.txt')|call delete('/home/jezm/.vim/plugin/supertab.vim')

@@ -48,6 +48,7 @@ map err :cope <CR> <CR> :ccl <CR>
 let g:SuperTabMappingForward = '<c-space>'
 let g:SuperTabMappingBackward = '<s-c-space>'
 let g:SuperTabMappingTabLiteral = '<tab>'
+let g:SuperTabDefaultCompletionType = "context"
 
 
 let g:tcommentMapLeader1=''
