@@ -1,4 +1,7 @@
-filetype on  " Automatically detect file types.
+call pathogen#infect()
+syntax on
+filetype plugin indent on
+
 set nocompatible  " We don't want vi compatibility.
 set showcmd
 "let mapleader = ","
@@ -154,8 +157,6 @@ set tabstop=2
 set shiftwidth=2
 set textwidth=0
 
-syntax on
- 
 if has("autocmd")
   filetype indent on
 endif
