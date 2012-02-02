@@ -43,6 +43,10 @@ inoremap <Nul> <C-n>
 
 map err :cope <CR> <CR> :ccl <CR>
 
+noremap <silent> <C-f> :CommandT<CR>
+noremap <silent> <C-b> :CommandTBuffer<CR>
+noremap <silent> <C-j> :CommandTJump<CR>
+
 "let g:SuperTabMappingForward = '<nul>'
 "let g:SuperTabMappingBackward = '<s-nul>'
 let g:SuperTabMappingForward = '<c-space>'
