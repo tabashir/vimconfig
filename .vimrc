@@ -1,5 +1,8 @@
 filetype on  " Automatically detect file types.
 set nocompatible  " We don't want vi compatibility.
+set showcmd
+"let mapleader = ","
+set timeoutlen=500
 
 map <F2> :wall \|!ctags -R --extra=+f<CR>
 map! <F2> <ESC><F2>
@@ -43,9 +46,9 @@ inoremap <Nul> <C-n>
 
 map err :cope <CR> <CR> :ccl <CR>
 
-noremap <silent> <C-f> :CommandT<CR>
-noremap <silent> <C-b> :CommandTBuffer<CR>
-noremap <silent> <C-j> :CommandTJump<CR>
+noremap <silent> <leader>t :CommandT<CR>
+noremap <silent> <leader>b :CommandTBuffer<CR>
+noremap <silent> <leader>j :CommandTJump<CR>
 
 "let g:SuperTabMappingForward = '<nul>'
 "let g:SuperTabMappingBackward = '<s-nul>'
@@ -124,7 +127,6 @@ set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
-set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 
@@ -164,7 +166,6 @@ endif
 :command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
 :command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
 
-"let mapleader=","
 map <leader>spe :set syntax=perl   ai et ts=4 sw=4 tw=0<CR>
 map <leader>spy :set syntax=python ai et ts=4 sw=4 tw=0<CR>
 map <leader>sr  :set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
