@@ -45,11 +45,15 @@
 'Tlist_WinHeight'	taglist.txt	/*'Tlist_WinHeight'*
 'Tlist_WinWidth'	taglist.txt	/*'Tlist_WinWidth'*
 'loaded_nerd_tree'	NERD_tree.txt	/*'loaded_nerd_tree'*
+:Ack	ack.txt	/*:Ack*
+:AckAdd	ack.txt	/*:AckAdd*
 :CommandT	command-t.txt	/*:CommandT*
 :CommandTBuffer	command-t.txt	/*:CommandTBuffer*
 :CommandTFlush	command-t.txt	/*:CommandTFlush*
 :CommandTJumps	command-t.txt	/*:CommandTJumps*
 :ErrorAtCursor	errormarker.txt	/*:ErrorAtCursor*
+:LAck	ack.txt	/*:LAck*
+:LAckAdd	ack.txt	/*:LAckAdd*
 :MatchDebug	matchit.txt	/*:MatchDebug*
 :NERDTree	NERD_tree.txt	/*:NERDTree*
 :NERDTreeClose	NERD_tree.txt	/*:NERDTreeClose*
@@ -182,6 +186,9 @@ VimExplorer-treehotkey	vimExplorer.txt	/*VimExplorer-treehotkey*
 [%	matchit.txt	/*[%*
 \cc	errormarker.txt	/*\\cc*
 ]%	matchit.txt	/*]%*
+ack	ack.txt	/*ack*
+ack-author	ack.txt	/*ack-author*
+ack.txt	ack.txt	/*ack.txt*
 b:blockCommentEndRE	IndentAnything.txt	/*b:blockCommentEndRE*
 b:blockCommentMiddleExtra	IndentAnything.txt	/*b:blockCommentMiddleExtra*
 b:blockCommentMiddleRE	IndentAnything.txt	/*b:blockCommentMiddleRE*
