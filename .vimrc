@@ -49,7 +49,7 @@ inoremap <Nul> <C-n>
 
 map err :cope <CR> <CR> :ccl <CR>
 
-noremap <silent> <leader>t :CommandT<CR>
+noremap <silent> <leader>f :CommandT<CR>
 noremap <silent> <leader>b :CommandTBuffer<CR>
 noremap <silent> <leader>j :CommandTJump<CR>
 
