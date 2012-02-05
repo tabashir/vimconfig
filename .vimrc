@@ -14,6 +14,7 @@ set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set nu  " Line numbers on
 set nowrap  " Line wrapping off
+set hlsearch  "search highlight
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 "Colours
@@ -166,7 +167,8 @@ Arpeggio noremap \v <ESC>:Rview
 Arpeggio noremap \l <ESC>:Rlayout 
 
 inoremap <Nul> <C-n>
-noremap <silent> <C-N> :se invhlsearch<CR>
+noremap <silent> <C-H> <ESC>:set invhlsearch<CR>
+noremap <silent> <C-N> <ESC>:set invwrap<CR>
 
 " alt+n or alt+p to navigate between entries in QuickFix
 noremap <silent> <M-p> :cp <cr>
