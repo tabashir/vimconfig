@@ -112,8 +112,8 @@ command! WQ :mksession! project.session | qall!
 noremap <F2> :wall \|!ctags -R --extra=+f<CR>
 noremap! <F2> <ESC><F2>
 
-noremap <F3> :NERDTreeToggle<CR>
-noremap! <F3> <ESC><F3>
+noremap <silent> <F3> :NERDTreeToggle<CR>
+noremap! <silent> <F3> <ESC><F3>
 
 noremap <silent> <F4> :Tlist <CR>
 noremap! <silent> <F4> <ESC><F4>
@@ -130,14 +130,14 @@ noremap! <F5> <ESC><F5>
 noremap <S-F5> :wall \|:.Rake!<CR>
 noremap! <S-F5> <ESC><S-F5>
 
-noremap <F9> :TComment<CR> 
-noremap! <F9> <ESC><F9>
+noremap <silent> <F9> :TComment<CR> 
+noremap! <silent> <F9> <ESC><F9>
 
-noremap <C-F9> :TCommentBlock<CR> 
-noremap! <C-F9> <ESC><C-F9>
+noremap <silent> <C-F9> :TCommentBlock<CR> 
+noremap! <silent> <C-F9> <ESC><C-F9>
 
-noremap <F11> :TlistToggle<CR>
-noremap! <F11> <ESC><F11>
+noremap <silent> <F11> :TlistToggle<CR>
+noremap! <silent> <F11> <ESC><F11>
 
 
 "noremap gt :tag <C-R><C-W><CR>
