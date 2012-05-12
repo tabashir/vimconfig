@@ -18,8 +18,16 @@ set hlsearch  "search highlight
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
 "Colours
-" colorscheme vividchalk  " Uncomment this to set a default theme
 hi CurrentLine term=bold cterm=bold gui=bold
+if has('gui_running')
+     set background=light
+else
+     set background=dark
+endif
+" let g:solarized_termcolors=16
+set t_Co=256
+colorscheme solarized
+
  
 " Formatting 
 set ts=2  " Tabs are 2 spaces
