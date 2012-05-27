@@ -24,9 +24,12 @@ if has('gui_running')
 else
      set background=dark
 endif
-" let g:solarized_termcolors=16
-set t_Co=256
+let g:solarized_termcolors=16
+set t_Co=16
 colorscheme solarized
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+
 
  
 " Formatting 
