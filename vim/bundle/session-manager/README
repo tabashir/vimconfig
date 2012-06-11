@@ -1,0 +1,12 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2579
+
+Usage:
+
+  :call SessionManagerToggle() - open session manager
+      
+ <Return> - load selected session file
+        o - load selected session file
+        s - save current session
+        n - create new session
+        d - delete selected session
+        q - close session manager

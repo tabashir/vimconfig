@@ -40,6 +40,7 @@ git_bundles = [
   "git://github.com/vim-scripts/XmlPretty.git",
   "git://github.com/vim-scripts/IndexedSearch.git",
   "git://github.com/vim-scripts/jQuery.git",
+#  "git://github.com/bsl/obviousmode.git",
 ]
 
 vim_org_scripts = [
@@ -57,7 +58,7 @@ puts "trashing everything (lookout!)"
 Dir["*"].each {|d| FileUtils.rm_rf d }
 
 git_bundles.each do |url|
-  dir = url.split('/').last.sub(/\.git$/, '')
+  dir = url.split('/').last.sub(/\.git$/, '').downcase
   puts "unpacking #{url} into #{dir}"
   `git clone #{url} #{dir}`
   FileUtils.rm_rf(File.join(dir, ".git"))
@@ -71,3 +72,8 @@ vim_org_scripts.each do |name, script_id, script_type|
     file << open("http://www.vim.org/scripts/download_script.php?src_id=#{script_id}").read
   end
 end
+
+puts "********************************************************"
+puts "you also need to run 'rake make' in the command-t folder"
+puts "you also need to edit xmlpretty.vim and set ff=unix"
+puts "********************************************************"

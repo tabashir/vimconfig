@@ -5,9 +5,6 @@ filetype plugin indent on
 set nocompatible  " We don't want vi compatibility.
 set showcmd
 set timeoutlen=500
-
-" Generic Configs
-
 set cf  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 set history=256  " Number of things to remember in history.
@@ -18,21 +15,6 @@ set nowrap  " Line wrapping off
 set hlsearch  "search highlight
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 
-"Colours
-hi CurrentLine term=bold cterm=bold gui=bold
-if has('gui_running')
-     set background=light
-else
-     set background=dark
-endif
-let g:solarized_termcolors=16
-set t_Co=16
-colorscheme solarized
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-
-
- 
 " Formatting 
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
@@ -50,27 +32,10 @@ set tabstop=2
 set shiftwidth=2
 set textwidth=0
 
-if has("autocmd")
-  filetype indent on
-endif
-
-:command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
-:command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
-:command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
-
 " Visual
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
 set laststatus=2  " Always show status line.
- 
-" gvim specific
-set mousehide  " Hide mouse after chars typed
-
-" Remove menu bar
-"set guioptions-=m
-
-" Remove toolbar
-set guioptions-=T
 
 "Visual Bell no Sound
 set noerrorbells  " No noise.
@@ -79,26 +44,43 @@ set visualbell
 " Mouse selection 
 set mouse +=a
 
-" Syntax stuff
-syntax enable
+"set viminfo=%100,'100,/100,h,@500,:100
+set viminfo='1000,f1,<500
 
-noremap <leader>spe :set syntax=perl   ai et ts=4 sw=4 tw=0<CR>
-noremap <leader>spy :set syntax=python ai et ts=4 sw=4 tw=0<CR>
-noremap <leader>sr  :set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
+"highlighting
+hi CurrentLine term=bold cterm=bold gui=bold
+
+"Colours
+set background=dark
+let g:solarized_termcolors=16
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
+set t_Co=16
+colorscheme solarized
+
+command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
+command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
+
+"easy syntax swapping
+command! PerlSyntax set syntax=perl   ai et ts=4 sw=4 tw=0<CR>
+command! PythonSyntax set syntax=python ai et ts=4 sw=4 tw=0<CR>
+command! RubySyntax set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
 
 " Ruby Setup
 au BufEnter *.rb set syntax=ruby ai et ts=2 sw=2 tw=0
+"let g:rubytest_in_quickfix = 1 
+"Tcomment no extra indents
+command! SetRubyComment :call TCommentDefineType("ruby", "#%s")
+"Change which file opens after executing :Rails command
+let g:rails_default_file='config/database.yml'
 
 " Python Setup
 autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
-"let g:rubytest_in_quickfix = 1 
-
-runtime xmlpretty.vim
 command! -range=% Xmlpretty :call XmlPretty(<line1>, <line2>)
-noremap <C-K><C-F> :Xmlpretty<CR>
 
 " Add recently accessed projects menu (project plugin)
 "set viminfo^=!
@@ -106,15 +88,6 @@ noremap <C-K><C-F> :Xmlpretty<CR>
 " set viminfo file to remember just current folder info
 command! GlobalInfo :set viminfo='1000,f1,<500,n~/.viminfo
 command! LocalInfo :set  viminfo='1000,f1,<500,n.viminfo
-
-"set viminfo=%100,'100,/100,h,@500,:100
-set viminfo='1000,f1,<500
-
-"Tcomment no extra indents
-command! SetRubyComment :call TCommentDefineType("ruby", "#%s")
-
-" Change which file opens after executing :Rails command
-let g:rails_default_file='config/database.yml'
  
 "au VimLeavePre * mksession! project.session
 command! WQ :mksession! project.session | qall!
@@ -150,7 +123,6 @@ noremap! <silent> <C-F9> <ESC><C-F9>
 
 noremap <silent> <F11> :TlistToggle<CR>
 noremap! <silent> <F11> <ESC><F11>
-
 
 "noremap gt :tag <C-R><C-W><CR>
 noremap gt :tj <C-R><C-W><CR>
