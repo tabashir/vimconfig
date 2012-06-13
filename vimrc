@@ -14,6 +14,7 @@ set nu  " Line numbers on
 set nowrap  " Line wrapping off
 set hlsearch  "search highlight
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
+set cursorline
 
 " Formatting 
 set ts=2  " Tabs are 2 spaces
@@ -48,15 +49,15 @@ set mouse +=a
 set viminfo='1000,f1,<500
 
 "highlighting
-hi CurrentLine term=bold cterm=bold gui=bold
+hi CursorLine term=bold cterm=bold gui=bold
 
 "Colours
-set background=dark
-let g:solarized_termcolors=16
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-set t_Co=16
-colorscheme solarized
+" set background=dark
+" let g:solarized_termcolors=16
+" "let g:solarized_visibility = "high"
+" "let g:solarized_contrast = "high"
+" set t_Co=16
+" colorscheme solarized
 
 command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
 command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substitute(submatch(0), '\\t', repeat(' ', ".&ts."), 'g')"
