@@ -94,6 +94,8 @@ command! WQ :mksession! project.session | qall!
 "
 " KEY MAPPING
 
+inoremap <Nul> <C-n>
+
 noremap <F2> :wall \|!ctags -R --extra=+f<CR>
 noremap! <F2> <ESC><F2>
 
@@ -127,36 +129,18 @@ noremap! <silent> <F11> <ESC><F11>
 "noremap gt :tag <C-R><C-W><CR>
 noremap gt :tj <C-R><C-W><CR>
 
-inoremap <Nul> <C-n>
-
 noremap err :cope <CR> <CR> :ccl <CR>
 
-noremap <silent> <leader>f <ESC>:CommandT<CR>
-noremap <silent> <leader>b <ESC>:CommandTBuffer<CR>
-noremap <silent> <leader>j <ESC>:CommandTJump<CR>
+noremap <silent> ,f <ESC>:CommandT<CR>
+noremap <silent> ,b <ESC>:CommandTBuffer<CR>
+noremap <silent> ,j <ESC>:CommandTJump<CR>
 
-map <Leader>k <Plug>RubyTestRun
-map <Leader>kk <Plug>RubyFileRun
+noremap <Leader>k <Plug>RubyTestRun
+noremap <Leader>kk <Plug>RubyFileRun
 
 call arpeggio#load()
-Arpeggio noremap \r <ESC>:CommandT<CR>
-Arpeggio noremap \b <ESC>:CommandTBuffer<CR>
-Arpeggio noremap \j <ESC>:CommandTJump<CR>
 
-Arpeggio noremap \f <ESC>:Rfunctionaltest 
-Arpeggio noremap \u <ESC>:Runittest 
-Arpeggio noremap \m <ESC>:Rmodel 
-Arpeggio noremap \c <ESC>:Rcontroller 
-Arpeggio noremap \v <ESC>:Rview 
-Arpeggio noremap \l <ESC>:Rlayout 
-
-inoremap <Nul> <C-n>
-noremap <silent> <C-H> <ESC>:set invhlsearch<CR>
-noremap <silent> <C-N> <ESC>:set invwrap<CR>
-
-" alt+n or alt+p to navigate between entries in QuickFix
-noremap <silent> <M-p> :cp <cr>
-noremap <silent> <M-n> :cn <cr>
+command! ToggleWrap :set invwrap
 
 " Centre screen on current line stuff
 noremap <space> zz
