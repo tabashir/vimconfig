@@ -136,8 +136,9 @@ noremap <silent> ,f <ESC>:CommandT<CR>
 noremap <silent> ,b <ESC>:CommandTBuffer<CR>
 noremap <silent> ,j <ESC>:CommandTJump<CR>
 
-noremap <Leader>k <Plug>RubyTestRun
-noremap <Leader>kk <Plug>RubyFileRun
+map <Leader>k <Plug>RubyTestRun
+map <Leader>kk <Plug>RubyFileRun
+command! RunTest <Plug>RubyTestRun
 
 call arpeggio#load()
 
