@@ -11,7 +11,7 @@ set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set ruler  " Ruler on
 set nu  " Line numbers on
-set nowrap  " Line wrapping off
+set wrap  " Line wrapping
 set hlsearch  "search highlight
 set tabstop=2 expandtab shiftwidth=2 softtabstop=2
 set cursorline
@@ -64,9 +64,9 @@ command! -range=% -nargs=0 Tab2Space execute "<line1>,<line2>s/^\\t\\+/\\=substi
 command! -range=% -nargs=0 Space2Tab execute "<line1>,<line2>s/^\\( \\{".&ts."\\}\\)\\+/\\=substitute(submatch(0), ' \\{".&ts."\\}', '\\t', 'g')"
 
 "easy syntax swapping
-command! PerlSyntax set syntax=perl   ai et ts=4 sw=4 tw=0<CR>
-command! PythonSyntax set syntax=python ai et ts=4 sw=4 tw=0<CR>
-command! RubySyntax set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
+command! SyntaxPerl set syntax=perl   ai et ts=4 sw=4 tw=0<CR>
+command! SyntaxPython set syntax=python ai et ts=4 sw=4 tw=0<CR>
+command! SyntaxRuby set syntax=ruby   ai et ts=2 sw=2 tw=0<CR>
 
 " Ruby Setup
 au BufEnter *.rb set syntax=ruby ai et ts=2 sw=2 tw=0
@@ -95,6 +95,11 @@ command! WQ :mksession! project.session | qall!
 "
 " KEY MAPPING
 
+" insert line below with enter
+"map <CR> O<Esc>j
+" insert line above with enter
+map <CR> o<Esc>
+
 inoremap <Nul> <C-n>
 
 noremap <F2> :wall \|!ctags -R --extra=+f<CR>
@@ -118,6 +123,12 @@ noremap! <F5> <ESC><F5>
 noremap <S-F5> :wall \|:.Rake!<CR>
 noremap! <S-F5> <ESC><S-F5>
 
+" buffer copy/paste
+vmap <F7> "+ygv"zy`>
+vmap <S-F7> "+p
+nmap <S-F7> "+p
+imap <S-F7> <ESC>"+p
+
 noremap <silent> <F9> :TComment<CR> 
 noremap! <silent> <F9> <ESC><F9>
 
@@ -138,7 +149,7 @@ noremap <silent> ,j <ESC>:CommandTJump<CR>
 
 map <Leader>k <Plug>RubyTestRun
 map <Leader>kk <Plug>RubyFileRun
-command! RunTest <Plug>RubyTestRun
+"map <Leader>l <Plug>RubyLastTestRun
 
 call arpeggio#load()
 
@@ -160,5 +171,36 @@ let g:tcommentMapLeader1=''
 let g:tcommentMapLeader2=''
 
 noremap! ZQ WQ
+
+function! PerforceDirList()
+    let mylist = getline('.')
+    let vcscommand = "~/bin/p4 dirs " . mylist . "/*"
+    exe "normal O\n"
+    exe "normal J"
+    exe ":r! ". vcscommand
+    exe "normal o"
+endfunc
+
+function! SvnUkDirList()
+    let mylist = getline('.')
+    let vcscommand = "svn list svn://subversion.wdstechnology.com/repos/trunk/".mylist
+    exe "normal O\n"
+    exe "normal J"
+    exe ":r! ". vcscommand
+    exe "normal o"
+endfunc
+
+function! SvnUsDirList()
+    let mylist = getline('.')
+    let vcscommand = "svn list svn://gemenon.corp.wdsglobal.com/".mylist
+    exe "normal O\n"
+    exe "normal J"
+    exe ":r! ". vcscommand
+    exe "normal o"
+endfunc
+
+map llp :call PerforceDirList()<CR>
+map llu :call SvnUkDirList()<CR>
+map lll :call SvnUsDirList()<CR>
 
 
