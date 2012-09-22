@@ -3,6 +3,18 @@ call pathogen#helptags()
 syntax on
 filetype plugin indent on
 set nocompatible  " We don't want vi compatibility.
+
+" DISABLE ARROW KEYS
+noremap  <Up> ""
+noremap! <Up> <Esc>
+noremap  <Down> ""
+noremap! <Down> <Esc>
+noremap  <Left> ""
+noremap! <Left> <Esc>
+noremap  <Right> ""
+noremap! <Right> <Esc>
+" END DISABLE ARROW KEYS
+
 set showcmd
 set timeoutlen=500
 set cf  " Enable error files & error jumping.
@@ -181,26 +193,9 @@ function! PerforceDirList()
     exe "normal o"
 endfunc
 
-function! SvnUkDirList()
-    let mylist = getline('.')
-    let vcscommand = "svn list svn://subversion.wdstechnology.com/repos/trunk/".mylist
-    exe "normal O\n"
-    exe "normal J"
-    exe ":r! ". vcscommand
-    exe "normal o"
-endfunc
-
-function! SvnUsDirList()
-    let mylist = getline('.')
-    let vcscommand = "svn list svn://gemenon.corp.wdsglobal.com/".mylist
-    exe "normal O\n"
-    exe "normal J"
-    exe ":r! ". vcscommand
-    exe "normal o"
-endfunc
-
-map llp :call PerforceDirList()<CR>
-map llu :call SvnUkDirList()<CR>
-map lll :call SvnUsDirList()<CR>
-
-
+"This allows for change paste motion cp{motion}
+nmap <silent> cp :set opfunc=ChangePaste<CR>g@
+function! ChangePaste(type, ...)
+    silent exe "normal! `[v`]\"_c"
+    silent exe "normal! p"
+endfunction
