@@ -1,6 +1,7 @@
 REQUIREMENTS
 
 ack
+ack-grep
 Vim compiled with Ruby support
 ruby
 gcc
