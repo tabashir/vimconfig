@@ -5,15 +5,19 @@ filetype plugin indent on
 set nocompatible  " We don't want vi compatibility.
 
 " DISABLE ARROW KEYS
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+" noremap  <Up> ""
+" noremap! <Up> <Esc>
+" noremap  <Down> ""
+" noremap! <Down> <Esc>
+" noremap  <Left> ""
+" noremap! <Left> <Esc>
+" noremap  <Right> ""
+" noremap! <Right> <Esc>
 " END DISABLE ARROW KEYS
+
+" next/prev row not line
+noremap j gj 
+noremap k gk
 
 set showcmd
 set timeoutlen=500
@@ -104,7 +108,10 @@ command! LocalInfo :set  viminfo='1000,f1,<500,n.viminfo
  
 "au VimLeavePre * mksession! project.session
 command! WQ :mksession! project.session | qall!
-"
+
+"ack
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+
 " KEY MAPPING
 
 " insert line below with enter
