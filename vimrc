@@ -97,6 +97,13 @@ autocmd BufRead,BufNewFile *.py syntax on
 autocmd BufRead,BufNewFile *.py set ai
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,with,try,except,finally,def,class
 
+" PHP Setup
+" run file with PHP CLI (F5)
+autocmd FileType php noremap <F5> :w!<CR>:!php %<CR>
+" PHP parser check (CTRL-F5)
+autocmd FileType php noremap <C-F5> :!php -l %<CR>
+
+
 command! -range=% Xmlpretty :call XmlPretty(<line1>, <line2>)
 
 " Add recently accessed projects menu (project plugin)

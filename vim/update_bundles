@@ -42,6 +42,7 @@ git_bundles = [
   "git://github.com/vim-scripts/jQuery.git",
   "git://github.com/skalnik/vim-vroom.git",
   "git://github.com/Lokaltog/vim-easymotion.git",
+  "git://github.com/Raimondi/delimitMate.git"
 #  "git://github.com/bsl/obviousmode.git",
 ]
 
