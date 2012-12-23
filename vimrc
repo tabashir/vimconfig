@@ -169,9 +169,9 @@ noremap gt :tj <C-R><C-W><CR>
 
 noremap err :cope <CR> <CR> :ccl <CR>
 
-noremap <silent> ,f <ESC>:CommandT<CR>
-noremap <silent> ,b <ESC>:CommandTBuffer<CR>
-noremap <silent> ,j <ESC>:CommandTJump<CR>
+noremap <silent> ,,f <ESC>:CommandT<CR>
+noremap <silent> ,,b <ESC>:CommandTBuffer<CR>
+noremap <silent> ,,j <ESC>:CommandTJump<CR>
 
 map <Leader>k <Plug>RubyTestRun
 map <Leader>kk <Plug>RubyFileRun
