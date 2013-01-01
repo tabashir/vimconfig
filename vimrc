@@ -103,6 +103,9 @@ autocmd FileType php noremap <F5> :w!<CR>:!php %<CR>
 " PHP parser check (CTRL-F5)
 autocmd FileType php noremap <C-F5> :!php -l %<CR>
 
+" Coffee Setup
+au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+command -nargs=1 C CoffeeCompile | :<args>
 
 command! -range=% Xmlpretty :call XmlPretty(<line1>, <line2>)
 
@@ -117,7 +120,7 @@ command! LocalInfo :set  viminfo='1000,f1,<500,n.viminfo
 command! WQ :mksession! project.session | qall!
 
 "ack
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --smart-case --type-set coffee=.coffee"
 
 " KEY MAPPING
 

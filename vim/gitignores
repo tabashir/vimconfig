@@ -1,3 +1,5 @@
 logs
 tags
 tmp*
+*.swp
+*.swo
