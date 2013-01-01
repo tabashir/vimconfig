@@ -107,7 +107,14 @@ autocmd FileType php noremap <C-F5> :!php -l %<CR>
 au BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 command -nargs=1 C CoffeeCompile | :<args>
 
+" XmlPretty
 command! -range=% Xmlpretty :call XmlPretty(<line1>, <line2>)
+
+" Syntastic
+let g:syntastic_coffee_lint_options = " -f ~/.vim/coffeelint.json "
+let g:syntastic_check_on_open=1
+let g:syntastic_auto_jump=1
+let g:syntastic_loc_list_height=5
 
 " Add recently accessed projects menu (project plugin)
 "set viminfo^=!
