@@ -4,6 +4,14 @@ syntax on
 filetype plugin indent on
 set nocompatible  " We don't want vi compatibility.
 
+" add all files to search path so can use completion
+set path=.,/usr/include,,**
+
+" buffer navigation
+"noremap <C-Left> :bprev<CR> 
+"noremap <C-Right> :bnext<CR>
+
+
 " DISABLE ARROW KEYS
 " noremap  <Up> ""
 " noremap! <Up> <Esc>
