@@ -69,6 +69,9 @@ set textwidth=0
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
 set laststatus=2  " Always show status line.
+let g:buftabs_in_statusline=1
+let g:buftabs_active_highlight_group="Question"
+
 
 "Visual Bell no Sound
 set noerrorbells  " No noise.
