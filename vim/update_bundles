@@ -32,7 +32,7 @@ git_bundles = [
   "git://github.com/vim-scripts/Rubytest.vim.git",
   "git://github.com/vim-scripts/Session-manager.git",
   "git://github.com/int3/vim-taglist-plus.git",
-  "git://github.com/vim-scripts/arpeggio.git",
+  # "git://github.com/vim-scripts/arpeggio.git",
   "git://github.com/altercation/vim-colors-solarized.git",
   "git://github.com/vim-scripts/VimExplorer.git",
   "git://github.com/ecomba/vim-ruby-refactoring.git",

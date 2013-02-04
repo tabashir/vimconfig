@@ -8,9 +8,17 @@ set nocompatible  " We don't want vi compatibility.
 set path=.,/usr/include,,**
 
 " buffer navigation
-"noremap <C-Left> :bprev<CR> 
-"noremap <C-Right> :bnext<CR>
+noremap <C-Left> :bprevious<CR>
+noremap <C-Right> :bnext<CR>
 
+" allow arrow keys with modifiers in tmux/screen
+if &term =~ '^screen'
+    " tmux will send xterm-style keys when its xterm-keys option is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+endif
 
 " DISABLE ARROW KEYS
 " noremap  <Up> ""
@@ -195,8 +203,6 @@ map <Leader>k <Plug>RubyTestRun
 map <Leader>kk <Plug>RubyFileRun
 "map <Leader>l <Plug>RubyLastTestRun
 
-call arpeggio#load()
-
 command! ToggleWrap :set invwrap
 
 " Centre screen on current line stuff
@@ -231,3 +237,5 @@ function! ChangePaste(type, ...)
     silent exe "normal! `[v`]\"_c"
     silent exe "normal! p"
 endfunction
+
+
